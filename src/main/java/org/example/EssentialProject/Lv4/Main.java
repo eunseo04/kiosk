@@ -21,15 +21,9 @@ public class Main {
                 if (num1 == 0) {
                     System.out.println("프로그램을 종료합니다.");
                     break;
-                } else{
-                    kiosk1.bgMenu(num1);
-                }
-            }catch (InputMismatchException e) {
-                System.out.println("숫자를 입력해주세요!");
-                scanner.next();
-                }
-                try{
+                } else {
                     while (true) {
+                        kiosk1.bgMenu(num1);
                         System.out.print("번호를 입력해주세요: ");
                         int num2 = scanner.nextInt();
                         if (num2 == 0) {
@@ -37,7 +31,8 @@ public class Main {
                         }
                         kiosk1.start(num2);
                     }
-                }catch (InputMismatchException e) {
+                }
+            }catch (InputMismatchException e) {
                         System.out.println("숫자를 입력해주세요!");
                         scanner.next();
             }
