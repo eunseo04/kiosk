@@ -18,6 +18,7 @@ public class Main {
                 kiosk2.mainMenu();
                 System.out.print("번호를 입력해주세요: ");
                 int num1 = scanner.nextInt();
+                System.out.println();
                 if (num1 == 0) {
                     System.out.println("프로그램을 종료합니다.");
                     break;
@@ -26,10 +27,9 @@ public class Main {
                         kiosk1.bgMenu(num1);
                         System.out.print("번호를 입력해주세요: ");
                         int num2 = scanner.nextInt();
-                        if (num2 == 0) {
-                            break;
-                        }
+                        System.out.println();
                         kiosk1.start(num2);
+                        break;
                     }
                 }
             }catch (InputMismatchException e) {

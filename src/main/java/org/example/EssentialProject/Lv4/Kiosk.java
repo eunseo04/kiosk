@@ -35,32 +35,34 @@ public class Kiosk {
 
     public void start(int num2) {
         switch(num2) {
+            case 0:
+                break;
             case 1:
                 System.out.print("선택한 메뉴: ");
                 System.out.print(menu.getMenuItems().get(0).name + " | ");
                 System.out.print(menu.getMenuItems().get(0).price + " | ");
-                System.out.print(menu.getMenuItems().get(0).explain);
+                System.out.println(menu.getMenuItems().get(0).explain);
                 System.out.println();
                 break;
             case 2:
                 System.out.print("선택한 메뉴: ");
                 System.out.print(menu.getMenuItems().get(1).name + " | ");
                 System.out.print(menu.getMenuItems().get(1).price + " | ");
-                System.out.print(menu.getMenuItems().get(1).explain);
+                System.out.println(menu.getMenuItems().get(1).explain);
                 System.out.println();
                 break;
             case 3:
                 System.out.print("선택한 메뉴: ");
                 System.out.print(menu.getMenuItems().get(2).name + " | ");
                 System.out.print(menu.getMenuItems().get(2).price + " | ");
-                System.out.print(menu.getMenuItems().get(2).explain);
+                System.out.println(menu.getMenuItems().get(2).explain);
                 System.out.println();
                 break;
             case 4:
                 System.out.print("선택한 메뉴: ");
                 System.out.print(menu.getMenuItems().get(3).name + " | ");
                 System.out.print(menu.getMenuItems().get(3).price + " | ");
-                System.out.print(menu.getMenuItems().get(3).explain);
+                System.out.println(menu.getMenuItems().get(3).explain);
                 System.out.println();
                 break;
             default:
