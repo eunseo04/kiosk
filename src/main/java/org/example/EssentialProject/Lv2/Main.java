@@ -39,15 +39,28 @@ public class Main {
                 switch(num) {
                     case 1:
                         System.out.println("ShackBurger을(를) 선택하셨습니다.");
+                        System.out.print(menuItems.get(0).name + " | ");
+                        System.out.print(menuItems.get(0).price + " | ");
+                        System.out.print(menuItems.get(0).explain);
+                        System.out.println();
                         break;
                     case 2:
                         System.out.println("SmokeShack을(를) 선택하셨습니다.");
+                        System.out.print(menuItems.get(1).name + " | ");
+                        System.out.print(menuItems.get(1).price + " | ");
+                        System.out.print(menuItems.get(1).explain);
                         break;
                     case 3:
                         System.out.println("Cheeseburger을(를) 선택하셨습니다.");
+                        System.out.print(menuItems.get(2).name + " | ");
+                        System.out.print(menuItems.get(2).price + " | ");
+                        System.out.print(menuItems.get(2).explain);
                         break;
                     case 4:
                         System.out.println("Hamburger을(를) 선택하셨습니다.");
+                        System.out.print(menuItems.get(3).name + " | ");
+                        System.out.print(menuItems.get(3).price + " | ");
+                        System.out.print(menuItems.get(3).explain);
                         break;
                     default:
                         System.out.println("있는 메뉴를 선택해주세요!");
