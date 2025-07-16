@@ -7,10 +7,10 @@ public class Kiosk {
     private final List<MenuItem> menuItems = new ArrayList<>();
 
     Kiosk(MenuItem a, MenuItem b, MenuItem c, MenuItem d) {
-        this.menuItems.add(a);
-        this.menuItems.add(b);
-        this.menuItems.add(c);
-        this.menuItems.add(d);
+        menuItems.add(a);
+        menuItems.add(b);
+        menuItems.add(c);
+        menuItems.add(d);
     }
 
     public void menu() {
@@ -25,28 +25,28 @@ public class Kiosk {
     public void start(int num) {
         switch(num) {
             case 1:
-                System.out.println("ShackBurger을(를) 선택하셨습니다.");
+                System.out.print("선택한 메뉴: ");
                 System.out.print(menuItems.get(0).name + " | ");
                 System.out.print(menuItems.get(0).price + " | ");
                 System.out.print(menuItems.get(0).explain);
                 System.out.println();
                 break;
             case 2:
-                System.out.println("SmokeShack을(를) 선택하셨습니다.");
+                System.out.print("선택한 메뉴: ");
                 System.out.print(menuItems.get(1).name + " | ");
                 System.out.print(menuItems.get(1).price + " | ");
                 System.out.print(menuItems.get(1).explain);
                 System.out.println();
                 break;
             case 3:
-                System.out.println("Cheeseburger을(를) 선택하셨습니다.");
+                System.out.print("선택한 메뉴: ");
                 System.out.print(menuItems.get(2).name + " | ");
                 System.out.print(menuItems.get(2).price + " | ");
                 System.out.print(menuItems.get(2).explain);
                 System.out.println();
                 break;
             case 4:
-                System.out.println("Hamburger을(를) 선택하셨습니다.");
+                System.out.print("선택한 메뉴: ");
                 System.out.print(menuItems.get(3).name + " | ");
                 System.out.print(menuItems.get(3).price + " | ");
                 System.out.print(menuItems.get(3).explain);
