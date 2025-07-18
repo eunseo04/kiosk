@@ -1,26 +1,39 @@
 package org.example.EssentialProject.Lv4;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Menu {
-    private final List<MenuItem> menuItems = new ArrayList<>();
+    private List<MenuItem> menuItems1 = new ArrayList<>();
+    private List<MenuItem> menuItems2 = new ArrayList<>();
+    private List<MenuItem> menuItems3 = new ArrayList<>();
+    private HashMap<String,List<MenuItem>> map = new HashMap<>();
 
-    Menu() {
+    public void setMenu (String category, List<MenuItem> menuItems) {
+        map.put(category,menuItems);
     }
 
-    public void burgerMenu() {
-        for (MenuItem menuItem : getMenuItems()) {
-            System.out.print(menuItem.number + " ");
-            System.out.print(menuItem.name + " | ");
-            System.out.print(menuItem.price + " | ");
-            System.out.print(menuItem.explain);
-            System.out.println();
+    public List<MenuItem> getMenuItems1() {
+        return menuItems1;
+    }
+
+    public List<MenuItem> getMenuItems2() {
+        return menuItems2;
+    }
+
+    public List<MenuItem> getMenuItems3() {
+        return menuItems3;
+    }
+
+    public void getCategory() {
+        for(String i : map.keySet()){
+            System.out.println(i);
         }
-        System.out.println("0. 뒤로가기");
     }
 
-    public List<MenuItem> getMenuItems() {
-        return menuItems;
+    public HashMap<String,List<MenuItem>> getMap() {
+        return map;
     }
+
 }
