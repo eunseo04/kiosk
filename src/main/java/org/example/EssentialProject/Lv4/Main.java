@@ -1,12 +1,9 @@
 package org.example.EssentialProject.Lv4;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Menu menu = new Menu();
+        Menu menu = new Menu(); // Menu 객체 생성을 통해 이름 설정
+        // Menu 클래스 내 있는 List<MenuItem> 에 MenuItem 객체 생성하면서 삽입
         menu.getMenuItems1().add(new MenuItem("1.","ShackBurger", "W 6.9", "토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
         menu.getMenuItems1().add(new MenuItem("2.","SmokeShack", "W 8.9", "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"));
         menu.getMenuItems1().add(new MenuItem("3.","Cheeseburger", "W 6.9", "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));
@@ -22,30 +19,8 @@ public class Main {
         menu.getMenuItems3().add(new MenuItem("3.","IceCream", "W 2.3", "입안에서 녹는 바닐라 아이스크림"));
         menu.getMenuItems3().add(new MenuItem("4.","CheeseStick", "W 2.3", "쭈욱 늘어나는 치즈스틱"));
         menu.setMenu("3. Desserts",menu.getMenuItems3());
-        Kiosk kiosk = new Kiosk(menu.getMap());
+        Kiosk kiosk = new Kiosk(menu); // Kiosk 객체 생성
+        kiosk.start();// Kiosk 내 시작하는 함수 호출
 
-        while(true) {
-            try {
-                System.out.println("[ MAIN MENU ]");
-                menu.getCategory();
-                System.out.println("0. 종료");
-                System.out.print("번호를 입력해주세요: ");
-                int num1 = scanner.nextInt();
-                System.out.println();
-                if (num1 == 0) {
-                    System.out.println("프로그램을 종료합니다.");
-                    break;
-                } else {
-                    kiosk.burgerMenu(num1);
-                    System.out.print("번호를 입력해주세요: ");
-                    int num2 = scanner.nextInt();
-                    System.out.println();
-                    kiosk.start(num2);
-                }
-            }catch (InputMismatchException e) {
-                        System.out.println("숫자를 입력해주세요!");
-                        scanner.next();
-            }
-        }
     }
 }
