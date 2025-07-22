@@ -30,19 +30,18 @@ public class Menu {
         return map;
     }
 
-    public void setMenu() {
-
-    }
-
     public String getCategory(int num1) {
+        List<String> menuCategory = new ArrayList<>();
+        for (String Category : map.keySet()) {
+            menuCategory.add(Category);
+        }
         if (num1 == 1) {
-            category = "1. Burgers";
-        } else if (num1 == 2) {
-            category = "2. Drinks";
+            return menuCategory.get(0);
+        }else if (num1 == 2) {
+            return menuCategory.get(1);
         } else if (num1 == 3) {
-            category = "3. Desserts";
+            return menuCategory.get(2);
         }
         return category;
     }
-
 }
