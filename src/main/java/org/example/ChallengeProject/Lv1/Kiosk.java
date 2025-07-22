@@ -1,10 +1,11 @@
-package org.example.EssentialProject.Lv4;
+package org.example.ChallengeProject.Lv1;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Kiosk {
     Menu menu;
+    Basket basket = new Basket();
     int num1;
     int num2;
 
@@ -16,6 +17,7 @@ public class Kiosk {
         for(String i : menu.getMap().keySet()){
             System.out.println(i);
         }
+        basket.orderMenu();
         System.out.println("0. 종료      | 종료");
     }
 
@@ -50,21 +52,30 @@ public class Kiosk {
                 if (num1 == 0) {
                     System.out.println("프로그램을 종료합니다.");
                     break;
-                }
-                burgerMenu(); // 입력 받은 숫자가 올바르다면 인덱스로 활용하여 List에 접근하기
-                System.out.print("번호를 입력해주세요: "); // 숫자 입력 받기
-                num2 = scanner.nextInt();
-                if (num2 == 0) {
+                } else if (num1 == 4) {
+                    basket.orderAsk();
+                    basket.lastOrder(scanner.nextInt());
+                } else {
+                    burgerMenu(); // 입력 받은 숫자가 올바르다면 인덱스로 활용하여 List에 접근하기
+                    System.out.print("번호를 입력해주세요: "); // 숫자 입력 받기
+                    num2 = scanner.nextInt();
+                    if (num2 == 0) {
+                        System.out.println();
+                        continue;
+                    }
                     System.out.println();
-                    continue;
+                    MenuItem food = menu.getMap().get(menu.getCategory(num1)).get(num2 - 1);
+                    System.out.println("선택한 메뉴: " + food.getName() + " | " + food.getPrice() + " | " + food.getExplain());
+                    basket.basketMenu();
+                    basket.collect(food.getName(), scanner.nextInt());
+                    basket.getBasket().add(food);
+                    System.out.println();
                 }
-                System.out.println();
-                MenuItem food = menu.getMap().get(menu.getCategory(num1)).get(num2-1);
-                System.out.println("선택한 메뉴: " + food.getName() + " | " + food.getPrice() + " | " + food.getExplain());
-                System.out.println();
             }catch (InputMismatchException e) {
                 System.out.println("숫자를 입력해주세요!");
                 scanner.next();
+            }catch (RuntimeException e) {
+                System.out.println("메뉴에 있는 숫자를 입력해주세요!");
             }
         }
     }
