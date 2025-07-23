@@ -55,6 +55,12 @@ public class Kiosk {
                 } else if (num1 == 4) {
                     basket.orderAsk();
                     basket.lastOrder(scanner.nextInt());
+                } else if(num1==5){
+                    if (!basket.getBasket().isEmpty()) {
+                        basket.getBasket().clear();
+                    } else{
+                        throw new RuntimeException();
+                    }
                 } else {
                     burgerMenu(); // 입력 받은 숫자가 올바르다면 인덱스로 활용하여 List에 접근하기
                     System.out.print("번호를 입력해주세요: "); // 숫자 입력 받기

@@ -41,10 +41,8 @@ public class Basket {
         if (num2 == 1) {
             System.out.println(food.getName()+" 이 장바구니에 추가되었습니다.");
             getBasket().add(food);
-        } else if (num2 == 2) {
-
-        } else {
-            throw new RuntimeException();
+        } else if (num2 != 2) {
+                throw new RuntimeException();
         }
     }
 
