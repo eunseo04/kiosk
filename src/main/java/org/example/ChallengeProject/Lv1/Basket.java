@@ -16,16 +16,20 @@ public class Basket {
     }
 
     public void orderAsk(){
-        System.out.println("아래와 같이 주문 하시겠습니까?");
-        System.out.println("[ Orders ]");
-        sum = 0.0;
-        for (MenuItem item : menu) {
-            System.out.println(item.getName() + " | " + item.getPrice() + " | " + item.getExplain());
-            sum += item.getPrice();
+        if (!menu.isEmpty()) {
+            System.out.println("아래와 같이 주문 하시겠습니까?");
+            System.out.println("[ Orders ]");
+            sum = 0.0;
+            for (MenuItem item : menu) {
+                System.out.println(item.getName() + " | " + item.getPrice() + " | " + item.getExplain());
+                sum += item.getPrice();
+            }
+            System.out.println("[ Total ]");
+            System.out.println("W " + sum);
+            System.out.println("1. 주문      2. 메뉴판");
+        } else{
+            throw new RuntimeException();
         }
-        System.out.println("[ Total ]");
-        System.out.println("W "+sum);
-        System.out.println("1. 주문      2. 메뉴판");
     }
 
     public void basketMenu(){
@@ -37,6 +41,10 @@ public class Basket {
         if (num2 == 1) {
             System.out.println(food.getName()+" 이 장바구니에 추가되었습니다.");
             getBasket().add(food);
+        } else if (num2 == 2) {
+
+        } else {
+            throw new RuntimeException();
         }
     }
 
@@ -45,8 +53,10 @@ public class Basket {
             System.out.println("주문이 완료되었습니다. 금액은 W "+sum+"입니다.");
             System.out.println();
             menu.clear();
-        } else {
+        } else if (num1 == 2) {
             System.out.println();
+        } else {
+            throw new RuntimeException();
         }
     }
 

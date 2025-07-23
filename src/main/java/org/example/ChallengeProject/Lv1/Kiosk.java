@@ -76,6 +76,7 @@ public class Kiosk {
                 scanner.next();
             }catch (RuntimeException e) {
                 System.out.println("메뉴에 있는 숫자를 입력해주세요!");
+                System.out.println();
             }
         }
     }
