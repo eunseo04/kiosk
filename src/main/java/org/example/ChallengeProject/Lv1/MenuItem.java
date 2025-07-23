@@ -4,10 +4,10 @@ public class MenuItem {
     // 이름, 가격, 설명 필드 선언하여 관리
     private String number;
     private String name;
-    private String price;
+    private double price;
     private String explain;
 
-    MenuItem(String number, String name, String price, String explain) {
+    MenuItem(String number, String name, double price, String explain) {
         this.number = number;
         this.name = name;
         this.price = price;
@@ -21,7 +21,7 @@ public class MenuItem {
     String getNumber(){
         return number;
     }
-    String getPrice(){
+    double getPrice(){
         return price;
     }
     String getExplain(){

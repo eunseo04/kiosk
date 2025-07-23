@@ -32,7 +32,7 @@ public class Kiosk {
 
         for (MenuItem item : menu.getMap().get(menu.getCategory(num1))) { // Menu가 가진 List<MenuItem>을 반복문을 활용하여 햄버거 메뉴 출력
             // menu.getMenuItems().get(i); 같은 형식으로 하나씩 들어가서 얻어와야 합니다.
-            System.out.print(item.getNumber() + " " + item.getName() + " | " + item.getPrice() + " | " + item.getExplain());
+            System.out.print(item.getNumber() + " " + item.getName() + " | " + "W " + item.getPrice() + " | " + item.getExplain());
             System.out.println();
         }
         System.out.println("0. 뒤로가기");
@@ -67,12 +67,12 @@ public class Kiosk {
                     MenuItem food = menu.getMap().get(menu.getCategory(num1)).get(num2 - 1);
                     System.out.println("선택한 메뉴: " + food.getName() + " | " + food.getPrice() + " | " + food.getExplain());
                     basket.basketMenu();
-                    basket.collect(food.getName(), scanner.nextInt());
-                    basket.getBasket().add(food);
+                    basket.collect(food, scanner.nextInt());
                     System.out.println();
                 }
             }catch (InputMismatchException e) {
                 System.out.println("숫자를 입력해주세요!");
+                System.out.println();
                 scanner.next();
             }catch (RuntimeException e) {
                 System.out.println("메뉴에 있는 숫자를 입력해주세요!");
