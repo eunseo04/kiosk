@@ -37,7 +37,7 @@ public class Basket {
         System.out.println("1. 확인        2. 취소");
     }
 
-    public void collect(MenuItem food, int num2) {
+    public void select(MenuItem food, int num2) {
         if (num2 == 1) {
             System.out.println(food.getName()+" 이 장바구니에 추가되었습니다.");
             getBasket().add(food);

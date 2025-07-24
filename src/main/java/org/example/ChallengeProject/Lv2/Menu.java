@@ -1,4 +1,4 @@
-package org.example.ChallengeProject.Lv1;
+package org.example.ChallengeProject.Lv2;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,6 +8,10 @@ public class Menu {
     // MenuItem 클래스를 List로 관리
     private HashMap<String,List<MenuItem>> map = new HashMap<>();
     private String category = "";
+
+    Menu(){}
+
+    // List에 들어있는 MenuItem을 순차적으로 보여주는 함수?
 
     public void setCategory(String menuCategory, MenuItem menuItem) {
         if(category.equals(menuCategory)) {

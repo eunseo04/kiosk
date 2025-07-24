@@ -1,4 +1,4 @@
-package org.example.ChallengeProject.Lv1;
+package org.example.ChallengeProject.Lv2;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -55,6 +55,7 @@ public class Kiosk {
                 } else if (num1 == 4) {
                     basket.orderAsk();
                     basket.lastOrder(scanner.nextInt());
+                    basket.sale(scanner.nextInt());
                 } else if(num1==5){
                     if (!basket.getBasket().isEmpty()) {
                         basket.getBasket().clear();
@@ -73,7 +74,7 @@ public class Kiosk {
                     MenuItem food = menu.getMap().get(menu.getCategory(num1)).get(num2 - 1);
                     System.out.println("선택한 메뉴: " + food.getName() + " | " + food.getPrice() + " | " + food.getExplain());
                     basket.basketMenu();
-                    basket.select(food, scanner.nextInt());
+                    basket.collect(food, scanner.nextInt());
                     System.out.println();
                 }
             }catch (InputMismatchException e) {
@@ -81,7 +82,7 @@ public class Kiosk {
                 System.out.println();
                 scanner.next();
             }catch (RuntimeException e) {
-                System.out.println("메뉴에 있는 숫자를 입력해주세요!");
+                System.out.println("아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.");
                 System.out.println();
             }
         }
