@@ -9,8 +9,6 @@ public class Menu {
     private HashMap<String,List<MenuItem>> map = new HashMap<>();
     private String category = "";
 
-    Menu(){}
-
     // List에 들어있는 MenuItem을 순차적으로 보여주는 함수?
 
     public void setCategory(String menuCategory, MenuItem menuItem) {

@@ -1,5 +1,7 @@
 package org.example.ChallengeProject.Lv1;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Menu menu = new Menu(); // Menu 객체 생성을 통해 이름 설정
